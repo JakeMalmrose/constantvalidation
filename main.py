@@ -5,5 +5,26 @@
 # If any input is bad, simply inform user which fields are invalid, and don't do the operation
 # User data will be persisted to json file
 
+import input
+import validator
+
 def run():
-    pass
+    while True:
+        choice = input.getMainMenu()
+        if choice == 1:
+            createUser()
+        elif choice == 2:
+            readUser()
+        elif choice == 3:
+            updateUser()
+        elif choice == 4:
+            deleteUser()
+        elif choice == 5:
+            exit()
+        else:
+            print("Please enter a valid number.")
+
+
+
+if __name__ == "__main__":
+    run()
