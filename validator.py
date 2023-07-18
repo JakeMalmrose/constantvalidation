@@ -1,5 +1,5 @@
 # This stores all of our regex validation strings and has methods
-# to validate input. This will be imported by main.py
+# to validate input. This will be imported by user.py
 
 import re
 
