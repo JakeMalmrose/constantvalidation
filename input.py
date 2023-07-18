@@ -31,7 +31,6 @@ def getUserInput(prompt):
 
 def getMainMenu():
     print("Welcome to the user manager!")
-    print("Please select an option:")
     print("1. Create a user")
     print("2. Read a user")
     print("3. Update a user")
