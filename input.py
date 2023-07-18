@@ -1,4 +1,4 @@
-# This will function as a module that can get all input and output
+# This will function as a module that can get all input from the user
 
 # Imports
 import re
@@ -8,11 +8,11 @@ import os
 # Global Variables
 
 # Functions
-def getMenuNumber(range):
+def getMenuNumber(max):
     while True:
         try:
             choice = int(input("Enter a number: "))
-            if choice in range:
+            if choice > 0 and choice <= max:
                 return choice
             else:
                 print("Please enter a valid number.")
@@ -28,3 +28,13 @@ def getRegexInput(prompt, regex):
 
 def getUserInput(prompt):
     return input(prompt)
+
+def getMainMenu():
+    print("Welcome to the user manager!")
+    print("Please select an option:")
+    print("1. Create a user")
+    print("2. Read a user")
+    print("3. Update a user")
+    print("4. Delete a user")
+    print("5. Exit")
+    return getMenuNumber(5)
