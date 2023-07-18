@@ -24,6 +24,18 @@ def run():
         else:
             print("Please enter a valid number.")
 
+def createUser():
+    pass
+
+def readUser():
+    pass
+
+def updateUser():
+    pass
+
+def deleteUser():
+    pass
+
 
 
 if __name__ == "__main__":
