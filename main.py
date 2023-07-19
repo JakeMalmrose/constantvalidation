@@ -7,6 +7,7 @@
 
 import input
 import validator
+import user as user
 
 def run():
     while True:
@@ -26,6 +27,11 @@ def run():
 
 def createUser():
     personAttributes = input.getCreateUserMenu()
+    if not user.createUser(personAttributes):
+        print("Invalid user. Please try again.")
+    else:
+        print(personAttributes["firstName"] + "created successfully!")
+
     
 
 def readUser():
