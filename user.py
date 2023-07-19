@@ -14,6 +14,13 @@ class User:
         self.phoneNumber = phoneNumber
         self.password = password
 
+def createUser(attributes):
+        if validator.validatePersonAttributes(attributes):
+            return User(attributes["firstName"], attributes["lastName"], attributes["email"], attributes["address"], attributes["city"], attributes["state"], attributes["zipcode"], attributes["phoneNumber"], attributes["password"])
+        else:
+            return False
+            
+
 
     
     
