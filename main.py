@@ -25,7 +25,8 @@ def run():
             print("Please enter a valid number.")
 
 def createUser():
-    pass
+    personAttributes = input.getCreateUserMenu()
+    
 
 def readUser():
     pass
