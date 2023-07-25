@@ -8,6 +8,7 @@
 import input
 import validator
 import user as user
+import database as database
 
 def run():
     while True:
@@ -30,12 +31,15 @@ def createUser():
     if not user.createUser(personAttributes):
         print("Invalid user. Please try again.")
     else:
-        print(personAttributes["firstName"] + "created successfully!")
-
-    
+        print(personAttributes["firstName"] + " created successfully!")
+    database.createUser(personAttributes)
+        
 
 def readUser():
-    pass
+    if database.findUser(input.getSearchUser()):
+        print("User found!")
+    else:
+        print("User not found.")
 
 def updateUser():
     pass
