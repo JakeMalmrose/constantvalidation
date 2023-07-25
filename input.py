@@ -61,4 +61,13 @@ def getCreateUserMenu():
         "password": password
     }
 
+def getSearchUser():
+    print("Searching for a user!")
+    firstName = input("Enter user's first name: ")
+    lastName = input("Enter user's last name: ")
+    return {
+        "firstName": firstName,
+        "lastName": lastName
+    }
+
 
