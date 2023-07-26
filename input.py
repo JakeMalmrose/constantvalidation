@@ -5,8 +5,6 @@ import re
 import json
 import os
 
-# Global Variables
-
 # Functions
 def getMenuNumber(max):
     while True:
@@ -39,7 +37,6 @@ def getMainMenu():
     return getMenuNumber(5)
 
 def getCreateUserMenu():
-    print("Making a new user!")
     firstName = input("Enter user's first name: ")
     lastName = input("Enter user's last name: ")
     email = input("Enter user's email: ")
