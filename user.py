@@ -3,7 +3,7 @@
 import validator
 
 class User:
-    def __init__(self, firstName, lastName, email, address, city, state, zipcode, phoneNumber, password):
+    def __init__(self, firstName, lastName, email, address, city, state, zipcode, phoneNumber, password, id):
         self.firstName = firstName
         self.lastName = lastName
         self.email = email
@@ -13,12 +13,13 @@ class User:
         self.zipcode = zipcode
         self.phoneNumber = phoneNumber
         self.password = password
+        self.id = id
 
-def createUser(attributes):
+def createUser(attributes, id):
         if validator.validatePersonAttributes(attributes):
-            return User(attributes["firstName"], attributes["lastName"], attributes["email"], attributes["address"], attributes["city"], attributes["state"], attributes["zipcode"], attributes["phoneNumber"], attributes["password"])
+            return User(attributes["firstName"], attributes["lastName"], attributes["email"], attributes["address"], attributes["city"], attributes["state"], attributes["zipcode"], attributes["phoneNumber"], attributes["password"], id)
         else:
-            return False
+            return validator.findInvalidInput(attributes)
             
 
 
