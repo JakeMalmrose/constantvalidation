@@ -22,17 +22,17 @@ def run():
         elif choice == 4:
             deleteUser()
         elif choice == 5:
+            saveDatabase()
             exit()
         else:
             print("Please enter a valid number.")
 
 def createUser():
     personAttributes = input.getCreateUserMenu()
-    if not user.createUser(personAttributes):
-        print("Invalid user. Please try again.")
+    if not database.createUser(personAttributes):
+        print("Invalid input for " + personAttributes["invalidInput"] + ". Please try again.")
     else:
         print(personAttributes["firstName"] + " created successfully!")
-    database.createUser(personAttributes)
         
 
 def readUser():
@@ -42,10 +42,20 @@ def readUser():
         print("User not found.")
 
 def updateUser():
-    pass
+    if database.findUser(input.getSearchUser()):
+        print("User found, updating!")
+        database.updateUser(input.getSearchUser())
+    else:
+        print("User not found. Nothing to update.")
 
 def deleteUser():
-    pass
+    if database.deleteUser(input.getSearchUser()):
+        print("User found, deleting!")
+    else:
+        print("User not found. Nothing to delete.")
+
+def saveDatabase():
+    database.saveDatabase()
 
 
 
