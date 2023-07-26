@@ -11,8 +11,8 @@ regexes = {
     "city": "^[a-zA-Z]{2,50}$",
     "state": "^[a-zA-Z]{2}$",
     "zipcode": "^[0-9]{5}$",
-    "phoneNumber": "^[0-9]{10}$",
-    "password": "^[a-zA-Z0-9]{8,50}$"
+    "phoneNumber": "^1?\\(?\\d{3}\\)?[- ]?\\d{3}[- ]?\\d{4}$",
+    "password": "^(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*()\\[\\]{};:'\"<>,./?]).{8,}$"
 }
 
 def validateInput(input, regex):

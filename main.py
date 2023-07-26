@@ -59,7 +59,12 @@ def updateUser():
     if userToUpdate:
         print("User found, updating!")
         print("Enter new user information:")
-        database.updateUser(userToUpdate, input.getCreateUserMenu())
+        userUpdating = input.getCreateUserMenu()
+        if not validator.findInvalidInput(userUpdating):
+            print("Invalid input for " + userUpdating["invalidInput"] + ". Please try again.")
+        else:
+            database.updateUser(userToUpdate, userUpdating)
+            print("User updated successfully!")
     else:
         print("User not found. Nothing to update.")
 
