@@ -30,8 +30,11 @@ class User:
             "id": self.id
         }
     
-    def __getitem__(self, __name: str) -> Any:
+    def __getitem__(self, __name):
         return self.getUserJson()[__name]
+    
+    def __setitem__(self, name, value):
+        self.__name = value
 
 def createUser(attributes, id):
         if validator.validatePersonAttributes(attributes):
