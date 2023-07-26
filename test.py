@@ -7,8 +7,6 @@ class TestMain(unittest.TestCase):
         main.run()
         print("Done testing main.py")
 
-
-
 if __name__ == '__main__':
     unittest.main()
 

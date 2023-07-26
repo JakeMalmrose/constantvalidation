@@ -11,6 +11,7 @@ import user as user
 import database as database
 
 def run():
+    database.__init__()
     while True:
         choice = input.getMainMenu()
         if choice == 1:
@@ -28,6 +29,7 @@ def run():
             print("Please enter a valid number.")
 
 def createUser():
+    print("Making a new user!")
     personAttributes = input.getCreateUserMenu()
     if not database.createUser(personAttributes):
         print("Invalid input for " + personAttributes["invalidInput"] + ". Please try again.")
@@ -36,15 +38,28 @@ def createUser():
         
 
 def readUser():
-    if database.findUser(input.getSearchUser()):
+    tempInput = input.getSearchUser()
+    if database.findUser(tempInput):
         print("User found!")
+        user = database.findUser(tempInput)
+        print("First Name: " + user["firstName"])
+        print("Last Name: " + user["lastName"])
+        print("Email: " + user["email"])
+        print("Address: " + user["address"])
+        print("City: " + user["city"])
+        print("State: " + user["state"])
+        print("Zipcode: " + user["zipcode"])
+        print("Phone Number: " + user["phoneNumber"])
+        print("Password :O : " + user["password"])
     else:
         print("User not found.")
 
 def updateUser():
-    if database.findUser(input.getSearchUser()):
+    userToUpdate = database.findUser(input.getSearchUser())
+    if userToUpdate:
         print("User found, updating!")
-        database.updateUser(input.getSearchUser())
+        print("Enter new user information:")
+        database.updateUser(userToUpdate, input.getCreateUserMenu())
     else:
         print("User not found. Nothing to update.")
 
@@ -56,6 +71,7 @@ def deleteUser():
 
 def saveDatabase():
     database.saveDatabase()
+    print("Database saved successfully!")
 
 
 
